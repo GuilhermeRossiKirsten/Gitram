@@ -3,8 +3,11 @@ function funcao1(){
 	return false;
 }
 //add testado
-function funcao2($num=0){
+branch_funcao2($id){
+	if($id>=0){
+	return false;}
 	return true;
-}
 
->
+}	
+
+>git 
