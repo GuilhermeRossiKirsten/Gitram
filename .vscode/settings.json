@@ -1,7 +1,11 @@
 {
     "C_Cpp.autocomplete": "default",
     "C_Cpp.default.compilerPath": "c:\\mingw64\\bin\\g++.exe",
-    "cmake.configureOnOpen": true
+    "cmake.configureOnOpen": true,
+    "files.associations": {
+        "*.tcc": "cpp",
+        "iostream": "cpp"
+    }
 
 
 }
