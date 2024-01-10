@@ -1,0 +1,7 @@
+{
+    "C_Cpp.autocomplete": "default",
+    "C_Cpp.default.compilerPath": "c:\\mingw64\\bin\\g++.exe",
+    "cmake.configureOnOpen": true
+
+
+}
