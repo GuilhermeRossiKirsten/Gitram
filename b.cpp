@@ -1,6 +1,11 @@
 #include <stdio.h>
 #include <iostream>
 #include <vector>
+#include <cctype>
+#include <cstring>
+#include <string>
+#include <chrono>
+
 
 using namespace std;
 
@@ -9,7 +14,6 @@ int main()
     // int teste3;
     // cout << teste3 << endl;
 
-    
     // int teste1;
     // string teste2;
     // cout << teste1;
@@ -53,8 +57,6 @@ int main()
 
     // test_scores.push_back(90);
 
-
-
     // int tamanho = sizeof(test_scores) / sizeof(test_scores.at(0));
 
     // cout << tamanho << endl;
@@ -85,7 +87,6 @@ int main()
 
     // vector_2d.push_back(vector1);
     // vector_2d.push_back(vector2);
-
 
     // cout << "===================" << endl;
     // cout << vector_2d.at(0).at(0) << endl;
@@ -126,16 +127,15 @@ int main()
     // int nickels{0};
     // int pennies{0};
 
-
     // dollar = money/100;
     // rest = money % 100;
-    
+
     // quarters = rest/25;
     // rest = money % 25;
-    
+
     // dimes = rest/10;
     // rest = money % 10;
-    
+
     // nickels = rest/5;
     // rest = money % 5;
 
@@ -162,7 +162,7 @@ int main()
     // case left:
     //     cout << "left" << endl;
     //     break;
-    
+
     // default:
 
     //     break;
@@ -179,17 +179,186 @@ int main()
     // }
 
     // cout << sum << endl;
+    // vector<int> vec{1,2,3};
+    // int result{0};
+    // for (int i = 0; i < vec.size(); i++){
+    //     for (int j = i+1; j < vec.size(); j++){
 
+    //         result += vec.at(i) * vec.at(j);
 
+    //     }
 
-    for (auto i : {"T","e","s","t","e"})
+    // }
+    // cout << result << endl;
+    // vector<double> vec{0,1,2,3,4,5,6,7,8,9};
+    // double num1{0.0};
+    // double sum{0.0};
+    // double teste{0.0};
+    // double average{0.0};
+    // double max_min{INT_MAX};
+    // bool duplicated{0};
+    // bool goodbye{1};
+    // while (goodbye)
+    // {
+    //     char choice{};
+    //     cout << "\ndigite uma letra: ";
+    //     cin >> choice;
+    //     switch (choice)
+    //     {
+    //     case 'A':
+    //     case 'a':
+    //         if (vec.size() != 0)
+    //         {
+    //             for (size_t i = 0; i < vec.size(); i++)
+    //             {
+    //                 cout << vec.at(i);
+    //                 if (i < vec.size() - 1)
+    //                 {
+    //                     cout << " - ";
+    //                 }
+    //             }
+    //         }
+    //         else
+    //         {
+    //             cout << "\nEmpty vector" << endl;
+    //         }
+    //         break;
+
+    //     case 'P':
+    //     case 'p':
+
+    //         cout << "entrer a  número: ";
+    //         cin >> num1;
+    //         for (size_t i = 0; i < vec.size(); i++)
+    //         {
+    //             if (vec.at(i) == num1)
+    //             {
+    //                 cout << "value duplicated" << endl;
+    //                 duplicated = 1;
+    //                 break;
+    //             }
+    //         }
+    //         if (duplicated)
+    //         {
+    //             break;
+    //         }
+    //         vec.push_back(num1);
+    //         cout << "\n"
+    //              << num1 << " added." << endl;
+    //         teste = 0;
+    //         for (size_t i = 0; i <= vec.size(); i++)
+    //         {
+    //             ++teste;
+    //         }
+    //         break;
+
+    //     case 'M':
+    //     case 'm':
+    //         if (vec.size() != teste)
+    //         {
+    //             sum = 0;
+    //             for (auto i : vec)
+    //             {
+    //                 sum += i;
+    //             }
+    //         }
+    //         average = sum / vec.size();
+    //         cout << "Average: " << average << endl;
+    //         break;
+
+    //     case 'S':
+    //     case 's':
+    //         for (size_t i = 0; i < vec.size(); i++)
+    //         {
+    //             if (vec.at(i) < max_min)
+    //             {
+    //                 max_min = vec.at(i);
+    //             }
+    //         }
+    //         cout << "Min: " << max_min << endl;
+    //         break;
+
+    //     case 'L':
+    //     case 'l':
+    //         for (size_t i = 0; i < vec.size(); i++)
+    //         {
+    //             if (vec.at(i) > max_min)
+    //             {
+    //                 max_min = vec.at(i);
+    //             }
+    //         }
+    //         cout << "Max: " << max_min << endl;
+    //         break;
+
+    //     case 'Q':
+    //     case 'q':
+    //         cout << "Goodbye!!!" << endl;
+    //         goodbye = 0;
+    //         break;
+
+    //     case 'C':
+    //     case 'c':
+    //         vec.clear();
+    //         cout << "clearing vector" << endl;
+    //         break;
+
+    //     default:
+
+    //         cout << "invalid" << endl;
+    //         break;
+    //     }
+    // }
+
+    string alphabet{"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"};
+    string key{"ZYXWVUTSRQPONMLKJIHGFEDCBAzyxwvutsrqponmlkjihgfedcba"};
+    string decrypting{"calma"};
+    string encrypt{};
+    string decrypt{};
+
+    for (char letter : decrypting)
     {
-        cout << i << "\n" << endl;
-
+        for (size_t i = 0; i < alphabet.size(); i++)
+        {
+            if (letter == alphabet[i])
+            {
+                encrypt += key[i];
+            }
+        }
+        if (!isalpha(letter))
+        {
+            encrypt += letter;
+        }
     }
-    
+    // cout << encrypt << endl;
 
+    // for (char c : decrypting)
+    // {
+    //     int position = alphabet.find(c);
+    //     if (position != string::npos)
+    //     {
+    //         char newchar{key[position]};
+    //         encrypt += newchar;
+    //     }
+    //     else
+    //     {
+    //         encrypt += c;
+    //     }
+    // }
 
-
+    // for (char c : encrypt)
+    // {
+    //     int position = alphabet.find(c);
+    //     if (position != string::npos)
+    //     {
+    //         char newchar{key[position]};
+    //         decrypt += newchar;
+    //     }
+    //     else
+    //     {
+    //         decrypt += c;
+    //     }
+    // }
+    cout << encrypt << endl;
+    cout << decrypt << endl;
     return 0;
 }
