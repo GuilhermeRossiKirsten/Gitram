@@ -5,6 +5,7 @@
 #include <cstring>
 #include <string>
 #include <chrono>
+#include <cmath>
 
 
 using namespace std;
@@ -309,26 +310,26 @@ int main()
     //     }
     // }
 
-    string alphabet{"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"};
-    string key{"ZYXWVUTSRQPONMLKJIHGFEDCBAzyxwvutsrqponmlkjihgfedcba"};
-    string decrypting{"calma"};
-    string encrypt{};
-    string decrypt{};
+    // string alphabet{"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"};
+    // string key{"ZYXWVUTSRQPONMLKJIHGFEDCBAzyxwvutsrqponmlkjihgfedcba"};
+    // string decrypting{"calma"};
+    // string encrypt{};
+    // string decrypt{};
 
-    for (char letter : decrypting)
-    {
-        for (size_t i = 0; i < alphabet.size(); i++)
-        {
-            if (letter == alphabet[i])
-            {
-                encrypt += key[i];
-            }
-        }
-        if (!isalpha(letter))
-        {
-            encrypt += letter;
-        }
-    }
+    // for (char letter : decrypting)
+    // {
+    //     for (size_t i = 0; i < alphabet.size(); i++)
+    //     {
+    //         if (letter == alphabet[i])
+    //         {
+    //             encrypt += key[i];
+    //         }
+    //     }
+    //     if (!isalpha(letter))
+    //     {
+    //         encrypt += letter;
+    //     }
+    // }
     // cout << encrypt << endl;
 
     // for (char c : decrypting)
@@ -358,7 +359,8 @@ int main()
     //         decrypt += c;
     //     }
     // }
-    cout << encrypt << endl;
-    cout << decrypt << endl;
-    return 0;
+    // cout << encrypt << endl;
+    // cout << decrypt << endl;
+
+   
 }
